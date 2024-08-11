@@ -6,4 +6,4 @@ const dataText = [
   "Taking regular breaks during study sessions can help prevent burnout and improve focus. Reviewing notes and summarizing key points after each class can help solidify your understanding of the material"
 ]
 
-export const randomText = dataText[Math.round(Math.random() * dataText.length - 1)]
+export const randomText = dataText[Math.round(Math.random() * (dataText.length - 1))]
