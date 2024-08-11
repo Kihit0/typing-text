@@ -1,0 +1,55 @@
+.normal {
+  color: #aaaaaa;
+  padding-right: 4px;
+
+  cursor: text;
+}
+
+.error {
+  color: #EF6262;
+}
+
+.success {
+  color: #62EFAC;
+}
+
+.input {
+  position: relative;
+
+  display: inline-block;
+  height: 100%;
+}
+
+.input::after {
+  position: absolute;
+  left: -2px;
+  top: 0;
+  
+  display: block;
+  background-color: rgb(245, 213, 71);  
+  height: 100%;
+  width: 2px;
+  opacity: 1;
+
+  content: "";
+
+  animation: input-text 1.5s infinite;
+}
+
+.block {
+  padding-block: 20px;
+}
+
+@keyframes input-text {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
