@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './Statistics.module.css'
 import { TypingContext } from '../Context/TypingContext'
-import { randomText } from '../../constants/text.data';
+import { words } from '../../constants/text.data';
 
 const Statistics = () => {
   const { userInput, startTime, errors, setErrors, setIsEnd, setStartTime, setUserInput, setText} = React.useContext(TypingContext);
@@ -17,11 +17,12 @@ const Statistics = () => {
     setStartTime(null);
     setIsEnd(false);
     setUserInput("");
-    setText(randomText);
+    setText(words);
   }
 
   return (
     <div className={styles.modal}>
+      <h3>Ваш результат: </h3>
       <div className={styles.modal__statistics}>
         <p>WPM: <span className={styles.modal__number}>{getWpm()}</span></p>
         <p>Errors: <span className={styles.modal__number}>{errors}</span></p>

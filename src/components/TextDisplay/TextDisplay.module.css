@@ -1,3 +1,8 @@
+.word {
+  display: inline-block;
+  margin-right: 10px;
+}
+
 .normal {
   color: #aaaaaa;
   padding-right: 4px;

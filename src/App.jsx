@@ -14,7 +14,8 @@ const App = () => {
   return (
     <div>
       <div className={cx(styles.app, styles.container)}>
-        <label>
+        <h1 className={styles.app__title}>Тренировка скорости печати</h1>
+        <label className={styles.app__label}>
           <TextDisplay />
           <Textarea />
         </label>

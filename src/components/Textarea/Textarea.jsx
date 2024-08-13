@@ -22,15 +22,17 @@ const Textarea = () => {
 
     if(!startTime) setStartTime(new Date());
 
-    if(input.length > text.length){ 
+    const fullText = text.join("");
+
+    if(input.trim().length >= fullText.length){ 
       setIsEnd(true);
       return;
     }
 
-    setUserInput(input);
+    setUserInput(input.trim());
 
     const errorsCount = input.split('').reduce((acc, char, index) => {
-      return acc + (char !== text[index] ? 1 : 0);
+      return acc + (char !== fullText[index] ? 1 : 0);
     }, 0)
 
     errors <= errorsCount && setErrors(errorsCount);

@@ -5,6 +5,14 @@
   overflow: hidden;
 }
 
+.app__title {
+  text-align: center;
+}
+
+.app__label {
+  text-align: center;
+}
+
 .container {
   max-width: 1400px;
   width: 100%;

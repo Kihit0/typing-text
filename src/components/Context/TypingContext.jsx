@@ -1,10 +1,10 @@
 import React from 'react'
-import {randomText} from "../../constants/text.data";
+import {words} from "../../constants/text.data";
 
 export const TypingContext = React.createContext();
 
 const TypingProvider = ({children}) => {
-  const [text, setText] = React.useState(randomText);
+  const [text, setText] = React.useState(words);
   const [userInput, setUserInput] = React.useState("");
   const [startTime, setStartTime] = React.useState(null);
   const [errors, setErrors] = React.useState(0);

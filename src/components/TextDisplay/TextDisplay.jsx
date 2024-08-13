@@ -10,23 +10,35 @@ const TextDisplay = () => {
   const {text, userInput} = React.useContext(TypingContext);
 
   const renderText = () => {
-    return text.split("").map((char, idx) => {
-      
-      const isError = char !== userInput[idx];
-
+    let globalIndex = 0;
+  
+    return text.map((word, idx) => {
       return (
-        
-        <span className={
-          cx(styles.normal, 
-          {
-            error: isError && idx < userInput.length, 
-            success: !isError && idx < userInput.length,
-            input: idx === userInput.length
-          })
-        } key={idx}>{char}</span>
-      )
-    })
-  }
+        <div className={styles.word} key={idx}>
+          {word.split("").map((char, index) => {
+            const isError = char !== userInput[globalIndex];
+            const isInput = globalIndex === userInput.length;
+  
+            globalIndex++; 
+  
+            return (
+              <span
+                className={cx(styles.normal, {
+                  error: isError && globalIndex <= userInput.length, 
+                  success: !isError && globalIndex <= userInput.length,
+                  input: isInput
+                })}
+                key={index}
+              >
+                {char}
+              </span>
+            );
+          })}
+        </div>
+      );
+    });
+  };
+  
 
   return (
     <div className={styles.block}>{renderText()}</div>
